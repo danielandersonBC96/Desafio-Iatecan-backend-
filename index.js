@@ -1,11 +1,10 @@
-
 require("dotenv").config();
 const express = require('express');
-const ConnectDB = require("./Server/Config/DataBaseConfig.js");
+const ConnectDB =require('././Server/Config/DataBaseConfig')
 const productRoutes =require('./Server/Routes/productRoutes.js');
 //DataBase
 
-ConnectDB();
+ConnectDB()
 
 const app = express();
 

@@ -1,15 +1,15 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "type": "module",
-  "description": "desafio tecnio IATECAM ",
+  "type": "commonjs",
+  "description": "desafio tecnico IATECAM ",
   "main": "index.js",
   "scripts": {
     "start": "node backend/index.js",
     "serve": "nodemon backend/index.js",
-    "client": "npm start --prefix frontend",
-    "dev": "nodemon index.js",
-    "data:import": "node backend/seaderScript.js"
+    "client": "npm start --prefix Frontend",
+    "dev": "nodemon index.js ",
+    "data:import": "node seaderScript.js"
 
   },
   "author": "",

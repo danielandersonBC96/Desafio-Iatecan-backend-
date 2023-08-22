@@ -1,6 +1,10 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema; 
 
-const productSchema = mongoose.Schema({
+
+//Cadastro Produtos
+
+const productSchema =  new Schema ({
   name: {
     type: String,
     required: true,
@@ -13,6 +17,12 @@ const productSchema = mongoose.Schema({
     type: String ,
     required: true,
   },
+   categori :{
+
+    type: String ,
+    required: true,
+
+   },
     price: {
     type: Number,
     required: true,
@@ -23,6 +33,7 @@ const productSchema = mongoose.Schema({
   },
 });
 
-const Product = mongoose.model("product", productSchema);
+ module.exports = mongoose.model("product", productSchema);
 
-module.exports = Product;
+ 
+

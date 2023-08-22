@@ -4,7 +4,7 @@ const productData = require(  "./Server/Data/DataProduct.js");
 const connectDB = require("./Server/Config/DataBaseConfig.js");
 const Product = require("./Server/Models/ProductModels.js");
 
-connectDB();''
+connectDB();
 
 const importData = async () => {
   try {

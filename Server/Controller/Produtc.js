@@ -1,9 +1,11 @@
-import { find, findById } from '../Models/Product';
+const Product = require("../Models/ProductModels.js")
+
+//Obtendo Produtos
 
 const GetAllProducts = async ( req, res) => {
     try {
 
-        const product = await find({});
+        const product =  await Product.find({});
         res.json(product)
 
     } catch (error){
@@ -18,7 +20,7 @@ const GetAllProducts = async ( req, res) => {
 const GetProductsById = async ( req, res) => {
     try {
 
-        const product = await findById(req.params.id);
+        const product = await Product.findById(req.params.id);
         res.json(product)
 
     } catch (error){
@@ -28,8 +30,11 @@ const GetProductsById = async ( req, res) => {
     }
 }
 
-export default {
+ module.exports = {
 
     GetAllProducts,
     GetProductsById
 }
+
+
+

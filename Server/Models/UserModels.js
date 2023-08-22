@@ -4,13 +4,13 @@ const Schema = mongoose.Schema;
 
 
 
- const UserChema = new Schema ({
-    name: {
+ const UserSchema = new Schema ({
+    Name: {
         type:String,
         required: true
 
     },
-    email:{
+    Email:{
         type: {
             type: String,
             required: true
@@ -18,17 +18,26 @@ const Schema = mongoose.Schema;
 
 
     },
-    phone:{
+     Phone:{
         type: String , 
         require: true
 
 
 
+    },
+     Addres:{
+        type: String , 
+        require: true
+
+    },
+    Password:{
+        type:String,
+        require:true 
     }
 
 }) ; 
 
-const Product = mongoose.model("clientes", productSchema);
+const userModel = mongoose.model(" FormUser",UserSchema);
 
-module.exports = Product;
+module.exports =  userModel ;
 

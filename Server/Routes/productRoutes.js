@@ -17,4 +17,4 @@ router.get ( '/:id', GetProductsById);
 
 
 
-module.exports = router;
+ module.exports = router

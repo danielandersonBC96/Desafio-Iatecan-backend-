@@ -2,42 +2,38 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema; 
 
 
-
+//Formulario
 
  const UserSchema = new Schema ({
-    Name: {
+    name:{
         type:String,
-        required: true
-
+        riquired:true
     },
-    Email:{
-        type: {
-            type: String,
-            required: true
-        }
+    email:{
 
-
-    },
-     Phone:{
-        type: String , 
-        require: true
-
-
-
-    },
-     Addres:{
-        type: String , 
-        require: true
-
-    },
-    Password:{
         type:String,
-        require:true 
+        riquired:true
+    },
+
+    phone:{
+        type:String,
+        riquired:true
+
+    },
+    addres:{
+        type:String,
+        riquired:true
+
+    },
+    password:{
+
+        type:String,
+        riquired:true
     }
 
 }) ; 
 
-const userModel = mongoose.model(" FormUser",UserSchema);
+module.exports = mongoose.model(" User",UserSchema);
 
-module.exports =  userModel ;
+
 

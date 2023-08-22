@@ -1,3 +1,6 @@
+
+// Cadastro dos produtos
+
 const Products = [
     {
       name: "PlayStation 5",

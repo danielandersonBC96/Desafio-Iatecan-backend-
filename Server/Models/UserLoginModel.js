@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema; 
 
+//Login 
 
 const  LoginSchema = new mongoose.Schema ({
 
@@ -21,7 +22,7 @@ Password: {
 })
 
 
-const LoginModels =  mongoose.model('LoginUser', LoginSchema)
+module.exports =  mongoose.model('', LoginSchema)
 
-module.exports =  LoginModels ;
+
 

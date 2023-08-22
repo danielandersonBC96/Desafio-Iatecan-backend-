@@ -1,38 +1,56 @@
-const userModel = require('../Models/UserModels.js')
+const UserModel = require('../Models/UserModels.js')
 
-//Criando Usuario (Formulario )
+//Criando  Controller do Usuario (Formulario )
 
-
-const CreateUser = async ( req , res )=>{
+const getAllUser = async ( req,res) =>{
 
     try{
-        const body = req.Body
-        const clientesModelsData = new  userModel()
-        clientesModelsData.Name = body.name
-        clientesModelsData.Email = body.email
-        clientesModelsData.Phone = body.phone
-        clientesModelsData.Addres = body.Addres
-        clientesModelsData.Password = body.Password
+        const UserList = await UserModel.find({})
+        return res.render("index", UserList)
 
-        await clientesModelsData.save()
-
-        res.status(200).send({ 
-            "status": true, "message": "User create sucessfully "
-
-
-        });
-        
-
-    } catch(error) {
-
-       res.status(400).send(40(error));
+    }catch(err) {
+       res.status(500).send({error:err.message})
 
     }
+    
+}
+
+
+
+const CreateUser = async ( req , res ) =>{
+const Models = req.body;
+
+  if(!Models.name){
+    return  res.redirect('/')
+  }
+
+  try {
+     await UserModel.create( Models)
+     return res.redirect('/')
+    
+
+  }catch ( err){
+    res.status(500).send({error:err.message})
+
+
+  }
+}
+
+
+module.exports = { CreateUser,
+    getAllUser
+
+}
+
+    
+
+
+
+
+
+
 
 
   
 
-}
-module.exports = {
-    CreateUser
-}
+

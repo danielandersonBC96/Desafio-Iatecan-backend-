@@ -13,15 +13,15 @@ ConnectDB()
 const app = express();
 
 //Rotas
-
+app.use(express.json())
 app.use('/api/products', productRoutes);
 app.use('/api/login',  LoginUserRoutes );
 app.use('/api/formulario', userRoutes);
 
 app.set("view engine", "ejs")
 app.use(express.static(path.join(__dirname,"public")))
-app.use(express.urlencoded())
-
+app.use(express.urlencoded());
+app.use(bodyParser.urlencoded({ extended: false}))
 
 //Servidor 
 

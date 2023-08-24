@@ -6,7 +6,8 @@ const Schema = mongoose.Schema;
 
 const productSchema =  new Schema ({
   name: {
-    type: String,
+
+  type: String,
     required: true,
   },
    imageUrl: {

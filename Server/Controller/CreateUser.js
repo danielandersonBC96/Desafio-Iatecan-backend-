@@ -1,45 +1,56 @@
+
+const bodyParser = require('body-parser')
 const UserModel = require('../Models/UserModels.js')
 
 //Criando  Controller do Usuario (Formulario )
 
-const getAllUser = async ( req,res) =>{
 
+
+  
+
+
+
+
+
+  const CreateUser = async ( req, res, next ) =>{
+     
+     const {name, password, email} = req.body
+    
     try{
-        const UserList = await UserModel.find({})
-        return res.render("index", UserList)
+    
+       await  UserModel.create(
+        {
+          name,
+          email,
+          password,
+        
+        }).then( user =>
+           res.status(200).json({
 
-    }catch(err) {
-       res.status(500).send({error:err.message})
+            message: "User Create ",
+            user
+           }
+            
 
+          
+           )
+
+
+        )
+
+    }catch(error){
+
+      console.error(error)
+      res.status(201).send({error:error.message} )
     }
-    
-}
 
+  
+} 
 
-
-const CreateUser = async ( req , res ) =>{
-const Models = req.body;
-
-  if(!Models.name){
-    return  res.redirect('/')
-  }
-
-  try {
-     await UserModel.create( Models)
-     return res.redirect('/')
-    
-
-  }catch ( err){
-    res.status(500).send({error:err.message})
-
-
-  }
-}
 
 
 module.exports = { CreateUser,
-    getAllUser
-
+  
 }
 
     

@@ -17,11 +17,12 @@ const GetAllProducts = async ( req, res) => {
 
 //Obtenha os Pordutos Por Id 
 
-const GetProductsById = async ( req, res) => {
-    try {
+const GetProductsById = async ( req, res) => {    try {
 
         const product = await Product.findById(req.params.id);
-        res.json(product)
+        res.json(product);
+        res.status(200).json( { message:" Id of User exist "})
+
 
     } catch (error){
         console.error(error);

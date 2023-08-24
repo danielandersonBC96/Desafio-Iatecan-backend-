@@ -5,35 +5,36 @@ const Schema = mongoose.Schema;
 //Formulario
 
  const UserSchema = new Schema ({
-    name:{
-        type:String,
-        riquired:true
-    },
-    email:{
+    name: {
+        type: String,
+        required: false ,
+        unique: true,
 
-        type:String,
-        riquired:true
-    },
+        
+      },
+      email: {
+        type: String,
+        required: false ,
 
-    phone:{
-        type:String,
-        riquired:true
+      },
 
-    },
-    addres:{
-        type:String,
-        riquired:true
+      password: {
+        type: String,
+        required:false ,
+        minlength: 6,
+       
+      },
+    
+   
+    createdAt:{
+        type:Date,
+        default: Date.now
 
-    },
-    password:{
-
-        type:String,
-        riquired:true
     }
 
-}) ; 
+}  ) ; 
 
-module.exports = mongoose.model(" User",UserSchema);
+module.exports = mongoose.model(" newUsertable",UserSchema);
 
 
 

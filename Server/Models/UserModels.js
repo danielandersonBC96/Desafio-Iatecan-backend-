@@ -24,13 +24,12 @@ const Schema = mongoose.Schema;
         minlength: 6,
        
       },
-    
-   
-    createdAt:{
+        createdAT:{
         type:Date,
         default: Date.now
 
-    }
+    },
+
 
 }  ) ; 
 

@@ -4,14 +4,6 @@ const UserModel = require('../Models/UserModels.js')
 
 //Criando  Controller do Usuario (Formulario )
 
-
-
-  
-
-
-
-
-
   const CreateUser = async ( req, res, next ) =>{
      
      const {name, password, email} = req.body

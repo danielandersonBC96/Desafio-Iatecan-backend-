@@ -1,5 +1,4 @@
 
-const bodyParser = require('body-parser')
 const UserModel = require('../Models/UserModels.js')
 
 //Criando  Controller do Usuario (Formulario )
@@ -21,19 +20,12 @@ const UserModel = require('../Models/UserModels.js')
 
             message: "User Create ",
             user
-           }
-            
-
-          
-           )
-
-
-        )
+           }));
 
     }catch(error){
 
       console.error(error)
-      res.status(201).send({error:error.message} )
+      res.status(201).json({error:error.message} )
     }
 
   
@@ -41,7 +33,7 @@ const UserModel = require('../Models/UserModels.js')
 
 
 
-module.exports = { CreateUser,
+module.exports = { CreateUser
   
 }
 

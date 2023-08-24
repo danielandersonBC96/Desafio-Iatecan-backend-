@@ -1,7 +1,5 @@
 
 const  express = require('express');
-
-
 const { CreateUser } = require('../Controller/CreateUser');
 const router = express.Router();
  

@@ -3,15 +3,15 @@ const Schema = mongoose.Schema;
 
 
 const  CartSchema = new Schema ({
-    Code: {
+    code: {
 
           type: String,
-          required: true,
+          require: true,
         },
   
-    Price: {
+    price: {
         type: String,
-        required: true,
+        require: true,
 
     }
 
@@ -19,10 +19,7 @@ const  CartSchema = new Schema ({
 
 },
 {
-    timestamps:true,
-}
-
-
-)
+    timestamps: true,
+})
 
 module.exports =  mongoose.model( 'Cart' , CartSchema )

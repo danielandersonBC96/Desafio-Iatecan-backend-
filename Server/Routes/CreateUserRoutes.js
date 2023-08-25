@@ -1,6 +1,7 @@
 
 const  express = require('express');
 const { CreateUser } = require('../Controller/CreateUser');
+
 const router = express.Router();
  
 
@@ -8,7 +9,7 @@ const router = express.Router();
 
 
 
-router.post('/', CreateUser
+router.post('/', CreateUser, 
 
 
 

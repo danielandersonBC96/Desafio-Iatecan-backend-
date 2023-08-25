@@ -15,11 +15,11 @@ const UserModel = require('../Models/UserModels.js')
           email,
           password,
         
-        }).then( user =>
+        }).then( userName =>
            res.status(200).json({
 
             message: "User Create ",
-            user
+            userName
            }));
 
     }catch(error){
@@ -37,7 +37,8 @@ module.exports = { CreateUser
   
 }
 
-    
+
+
 
 
 

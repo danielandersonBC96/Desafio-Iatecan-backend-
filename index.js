@@ -6,6 +6,7 @@ const productRoutes =require("./Server/Routes/ProductRoutes");
 const  LoginUserRoutes = require('./Server/Routes/UserLoginRoutes.js');
 const  userRoutes = require('./Server/Routes/CreateUserRoutes.js');
 const  cartRoutes = require('./Server/Routes/CartRoutes')
+const transactionsRoutes = require('./Server/Routes/TransactionsRoutes')
 const path = require("path")
 
 
@@ -22,6 +23,7 @@ app.use('/api/products', productRoutes);
 app.use('/api/login',  LoginUserRoutes );
 app.use('/api/formulario', userRoutes);
 app.use('/api/cart' , cartRoutes)
+app.use('/api/transactions' ,  transactionsRoutes)
 
 app.set("view engine", "ejs")
 

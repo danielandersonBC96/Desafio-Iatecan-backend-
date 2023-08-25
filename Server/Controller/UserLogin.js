@@ -4,17 +4,21 @@ const UserModels = require('../Models/UserModels.js');
 
 //Login do Usuario 
 
+
+
 const LoginUser = async ( req, res ) => {
 
    
 
     const {name , password } =  req.body
 
+
+    
+
     try{
 
         
         const UserLogin = await UserModels.findOne( { name, password}) 
-        
 
         if(!UserLogin){
             res.status(401).json({
@@ -22,7 +26,8 @@ const LoginUser = async ( req, res ) => {
                 error : ' User not found',
             })
 
-        } else{
+        }
+           else{
             res.status(201).json({
                 message: "Login Sucessful",
                 UserLogin
@@ -47,12 +52,30 @@ const LoginProvide = async (req, res) => {
 
     // Check if username and password is provided
 
-    if (!name || !password) {
-      return res.status(400).json({
-        message: "Username or Password not present",
-      })
+
+    try{
+
+        
+        const UserLogin = await UserModels.findOne( { name, password}) 
+        
+        if (!name || !password) {
+            return res.status(400).json({
+              message: "Username or Password not present",
+              UserLogin
+
+            })
+      
+          }
+       
+    }
+    catch(error) {
+        console.error(error);
+        res.status(500).json( { message:"usuer Dont Exist "})
 
     }
+
+
+
 }
 
 

@@ -9,13 +9,13 @@ const TransactionSchema = new  Schema ({
     
         cartCode: {
             type:String,
-            required:true,
+            required:false,
         },
         cart: {
             type: {
                 type: String,
-                required: true,
-                unique: true,
+                required: false,
+                unique: false,
             },
         },
         status: {
@@ -30,72 +30,73 @@ const TransactionSchema = new  Schema ({
                 "chargeback",
                 "error",
             ],
-          required: true,
+          required: false,
 
         },
         paymentType: {
             type: String,
             enum: [ 'bilete', "creditCart"],
-            required: true , 
+            required: false , 
         }, 
         installments: {
             type: Number, 
-            required: true , 
+            required: false , 
         }, 
 
        total: {
             type: String ,
-          required: true,
+          required: false,
            },
         transactionId:  {
             type: String, 
-            required: true , 
+            required: false, 
         }, 
         processorRespone:{
           type: String,
-          required: true , 
+          required: false, 
         } ,
         cutumerName: {
             type: String,
-            required: true , 
+            required: false, 
         },
         custumerEmail: {
             type: String,
-            required: true ,  
+            required: false ,  
 
         },
         custumerMobile: {
             type: String, 
-             required: true , 
+             required: false, 
         },
         custumerDocumente: {
             type: String,
-            required: true , 
+            required: false, 
         },
         billingAddress: {
             type:String,
+            required: false, 
         },
         billingNumber: {
             type:String,
-            required: true ,  
+            required: false, 
         },
         billingNeighood: {
             type:String,
-            required: true , 
+            required: false, 
         },
         billingCity: {
             type:String,
-            required: true , 
+            required: false, 
         },
         billingSate: {
 
             type:String,
-            required: true , 
+            required: false, 
         },
 
 },
 {
-    timestamps:true,
+    timestamps:false,
 }
 
 )
